@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Website</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>Welcome to Full Website</h1>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="blog/blog.html">Blog</a> |
+    <a href="gallery/gallery.html">Gallery</a> |
+    <a href="contact/contact.html">Contact</a> |
+    <a href="chatbot/chatbot.html">Chatbot</a> |
+
+    <!-- Auth Links -->
+    <span id="authLinks">
+      <a href="auth/login.html" id="loginLink">Login</a> |
+      <a href="auth/signup.html" id="signupLink">Signup</a>
+    </span>
+
+    <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
+  </nav>
+
+  <br />
+
+  <!-- Dashboard Button -->
+  <button onclick="goToDashboard()">Go to Dashboard</button>
+
+  <!-- (Optional) Test Protected API -->
+  
+  <button onclick="accessDashboard()">Access Dashboard (Test)</button>
+ 
+
+  <script>
+    // Go to dashboard if user is logged in
+    function goToDashboard() {
+      const token = localStorage.getItem("token");
+      if (token) {
+        window.location.href = "protected/dashboard.html";
+      } else {
+        alert("Please login first.");
+        window.location.href = "auth/login.html";
+      }
+    }
+
+    // Show/hide login-logout buttons based on login status
+    document.addEventListener("DOMContentLoaded", () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        document.getElementById("authLinks").style.display = "none";
+        document.getElementById("logoutLink").style.display = "inline";
+      } else {
+        document.getElementById("authLinks").style.display = "inline";
+        document.getElementById("logoutLink").style.display = "none";
+      }
+    });
+
+    // Logout function
+    function logout() {
+      localStorage.removeItem("token");
+      alert("You have been logged out.");
+      window.location.replace("index.html");
+    }
+
+    // OPTIONAL: Access dashboard API test (for dev)
+    async function accessDashboard() {
+      const token = localStorage.getItem("token");
+      try {
+        const res = await fetch("http://localhost:5000/api/dashboard", {
+          method: "GET",
+          headers: {
+            "Authorization": token
+          }
+        });
+        const data = await res.json();
+        console.log(data);
+        alert(data.msg || data.error);
+      } catch (err) {
+        alert("Something went wrong.");
+        console.error(err);
+      }
+    }
+  </script>
+</body>
+</html>
