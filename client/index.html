@@ -1,90 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Full Website</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <h1>Welcome to Full Website</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page" data-theme="light" id="pageRoot">
+      <nav class="navbar navbar-expand-lg navbar-light topbar sticky-top py-2">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="images/colorful-logo.jpg"
+              alt="MySite Logo"
+              style="width: 70px"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#myNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog/blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery/gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact/contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="chatbot/chatbot.html">Chatbot</a>
+              </li>
+            </ul>
+            <ul
+              class="navbar-nav mb-2 mb-lg-0 align-items-lg-center"
+              id="authLinks"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="auth/login.html"
+                  ><span class="bi bi-box-arrow-in-right me-1"></span> Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="auth/signup.html"
+                  ><span class="bi bi-person-plus me-1"></span> Sign up</a
+                >
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-2">
+              <li class="nav-item" id="logoutWrap">
+                <a
+                  href="#"
+                  class="nav-link"
+                  id="logoutLink"
+                  onclick="logout()"
+                  style="display: none"
+                  ><i class="bi bi-box-arrow-left me-1"></i>Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- main content -->
+      <main>
+        <div class="container-fluid">
+          <div class="row g-0">
+            <!-- Left Side -->
+            <aside
+              class="col-lg-2 col-md-3 d-none d-md-block sidebar p-3"
+              id="leftSidebar"
+            >
+              <div class="section-title">Getting Started</div>
+              <div class="sidenav list-group list-group-flush">
+                <button onclick="goToDashboard()" style="border-radius: 3%">
+                  Dashboard
+                </button>
+                <a href="#intro" class="list-group-item">Introduction</a>
+                <a href="#setup" class="list-group-item">Setup</a>
+                <a href="#syntax" class="list-group-item">Syntax</a>
+              </div>
+              <div class="section-title">Core Topics</div>
+              <div class="list-group list-group-flush">
+                <a href="#examples" class="list-group-item">Examples</a>
+                <a href="#components" class="list-group-item">Components</a>
+                <a href="#faq" class="list-group-item">FAQ</a>
+              </div>
+            </aside>
+            <!-- Main Content -->
+            <div class="col-lg-8 col-md-6">
+              <h1 id="l1">Welcome</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                sapiente architecto molestias at nihil. Delectus quam ea ad
+                reiciendis odit suscipit? Illum quos, ullam quam aliquid fugiat
+                adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officia sapiente architecto molestias at nihil. Delectus quam ea
+                ad reiciendis odit suscipit? Illum quos, ullam quam aliquid
+                fugiat adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore?
+              </p>
+              <hr />
+              <h3 id="l2">Test</h3>
+              <p>
+                Lorem ipsum... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Officia sapiente architecto molestias at
+                nihil. Delectus quam ea ad reiciendis odit suscipit? Illum quos,
+                ullam quam aliquid fugiat adipisci commodi. Tempore. Lorem,
+                ipsum dolor sit amet consectetur adipisicing elit. Magnam libero
+                magni cumque reiciendis facilis quis sint, voluptatem iste
+                assumenda tempora dolor eaque maxime architecto qui vero,
+                maiores numquam sunt labore? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Officia sapiente architecto
+                molestias at nihil. Delectus quam ea ad reiciendis odit
+                suscipit? Illum quos, ullam quam aliquid fugiat adipisci
+                commodi. Tempore. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Magnam libero magni cumque reiciendis facilis
+                quis sint, voluptatem iste assumenda tempora dolor eaque maxime
+                architecto qui vero, maiores numquam sunt labore? Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Officia sapiente
+                architecto molestias at nihil. Delectus quam ea ad reiciendis
+                odit suscipit? Illum quos, ullam quam aliquid fugiat adipisci
+                commodi. Tempore. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Magnam libero magni cumque reiciendis facilis
+                quis sint, voluptatem iste assumenda tempora dolor eaque maxime
+                architecto qui vero, maiores numquam sunt labore? Lorem ipsum...
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                sapiente architecto molestias at nihil. Delectus quam ea ad
+                reiciendis odit suscipit? Illum quos, ullam quam aliquid fugiat
+                adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officia sapiente architecto molestias at nihil. Delectus quam ea
+                ad reiciendis odit suscipit? Illum quos, ullam quam aliquid
+                fugiat adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officia sapiente architecto molestias at nihil. Delectus quam ea
+                ad reiciendis odit suscipit? Illum quos, ullam quam aliquid
+                fugiat adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore? Lorem ipsum... Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Officia sapiente architecto molestias at
+                nihil. Delectus quam ea ad reiciendis odit suscipit? Illum quos,
+                ullam quam aliquid fugiat adipisci commodi. Tempore. Lorem,
+                ipsum dolor sit amet consectetur adipisicing elit. Magnam libero
+                magni cumque reiciendis facilis quis sint, voluptatem iste
+                assumenda tempora dolor eaque maxime architecto qui vero,
+                maiores numquam sunt labore? Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Officia sapiente architecto
+                molestias at nihil. Delectus quam ea ad reiciendis odit
+                suscipit? Illum quos, ullam quam aliquid fugiat adipisci
+                commodi. Tempore. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Magnam libero magni cumque reiciendis facilis
+                quis sint, voluptatem iste assumenda tempora dolor eaque maxime
+                architecto qui vero, maiores numquam sunt labore? Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Officia sapiente
+                architecto molestias at nihil. Delectus quam ea ad reiciendis
+                odit suscipit? Illum quos, ullam quam aliquid fugiat adipisci
+                commodi. Tempore. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Magnam libero magni cumque reiciendis facilis
+                quis sint, voluptatem iste assumenda tempora dolor eaque maxime
+                architecto qui vero, maiores numquam sunt labore? Lorem ipsum...
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                sapiente architecto molestias at nihil. Delectus quam ea ad
+                reiciendis odit suscipit? Illum quos, ullam quam aliquid fugiat
+                adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officia sapiente architecto molestias at nihil. Delectus quam ea
+                ad reiciendis odit suscipit? Illum quos, ullam quam aliquid
+                fugiat adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officia sapiente architecto molestias at nihil. Delectus quam ea
+                ad reiciendis odit suscipit? Illum quos, ullam quam aliquid
+                fugiat adipisci commodi. Tempore. Lorem, ipsum dolor sit amet
+                consectetur adipisicing elit. Magnam libero magni cumque
+                reiciendis facilis quis sint, voluptatem iste assumenda tempora
+                dolor eaque maxime architecto qui vero, maiores numquam sunt
+                labore?
+              </p>
+            </div>
+            <aside class="col-lg-2 d-none d-lg-block p-3">
+              <div class="sidenav content-card p-3 mb-3 text-center">
+                <div class="small text-muted">Sponsored</div>
+                <div class="fw-semibold">Your Ad Here</div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+      <footer class="mt-auto py-3">
+        <div
+          class="container d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div class="small">© <span id="year"></span> MySite</div>
+          <div class="d-flex gap-3">
+            <a class="text-white text-decoration-none" href="#">Docs</a>
+            <a class="text-white text-decoration-none" href="#">Blog</a>
+            <a class="text-white text-decoration-none" href="#">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="blog/blog.html">Blog</a> |
-    <a href="gallery/gallery.html">Gallery</a> |
-    <a href="contact/contact.html">Contact</a> |
-    <a href="chatbot/chatbot.html">Chatbot</a> |
+    <!-- (Optional) Test Protected API -->
 
-    <!-- Auth Links -->
-    <span id="authLinks">
-      <a href="auth/login.html" id="loginLink">Login</a> |
-      <a href="auth/signup.html" id="signupLink">Signup</a>
-    </span>
+    <!-- <button onclick="accessDashboard()">Access Dashboard (Test)</button> -->
 
-    <a href="#" id="logoutLink" onclick="logout()" style="display: none;">Logout</a>
-  </nav>
+    <script>
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-  <br />
-
-  <!-- Dashboard Button -->
-  <button onclick="goToDashboard()">Go to Dashboard</button>
-
-  <!-- (Optional) Test Protected API -->
-  
-  <button onclick="accessDashboard()">Access Dashboard (Test)</button>
- 
-
-  <script>
-    // Go to dashboard if user is logged in
-    function goToDashboard() {
-      const token = localStorage.getItem("token");
-      if (token) {
-        window.location.href = "protected/dashboard.html";
-      } else {
-        alert("Please login first.");
-        window.location.href = "auth/login.html";
+      // Go to dashboard if user is logged in
+      function goToDashboard() {
+        const token = localStorage.getItem("token");
+        if (token) {
+          window.location.href = "protected/dashboard.html";
+        } else {
+          alert("Please login first.");
+          window.location.href = "auth/login.html";
+        }
       }
-    }
 
-    // Show/hide login-logout buttons based on login status
-    document.addEventListener("DOMContentLoaded", () => {
-      const token = localStorage.getItem("token");
-      if (token) {
-        document.getElementById("authLinks").style.display = "none";
-        document.getElementById("logoutLink").style.display = "inline";
-      } else {
-        document.getElementById("authLinks").style.display = "inline";
-        document.getElementById("logoutLink").style.display = "none";
+      // Show/hide login-logout buttons based on login status
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("token");
+        if (token) {
+          document.getElementById("authLinks").style.display = "none";
+          document.getElementById("logoutLink").style.display = "inline";
+        } else {
+          document.getElementById("authLinks").style.display = "inline";
+          document.getElementById("logoutLink").style.display = "none";
+        }
+      });
+
+      // Logout function
+      function logout() {
+        localStorage.removeItem("token");
+        alert("You have been logged out.");
+        window.location.replace("index.html");
       }
-    });
 
-    // Logout function
-    function logout() {
-      localStorage.removeItem("token");
-      alert("You have been logged out.");
-      window.location.replace("index.html");
-    }
-
-    // OPTIONAL: Access dashboard API test (for dev)
-    async function accessDashboard() {
-      const token = localStorage.getItem("token");
-      try {
-        const res = await fetch("http://localhost:5000/api/dashboard", {
-          method: "GET",
-          headers: {
-            "Authorization": token
-          }
-        });
-        const data = await res.json();
-        console.log(data);
-        alert(data.msg || data.error);
-      } catch (err) {
-        alert("Something went wrong.");
-        console.error(err);
+      // OPTIONAL: Access dashboard API test (for dev)
+      async function accessDashboard() {
+        const token = localStorage.getItem("token");
+        try {
+          const res = await fetch("http://localhost:5000/api/dashboard", {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          const data = await res.json();
+          console.log(data);
+          alert(data.msg || data.error);
+        } catch (err) {
+          alert("Something went wrong.");
+          console.error(err);
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,2 +1,116 @@
-body { font-family: Arial; background: #f0f0f0; padding: 20px; }
-nav a { margin: 0 10px; text-decoration: none; }
+:root {
+  --brand: #0ea5e9; /* sky-500 */
+  --brand-2: #a78bfa; /* violet-400 */
+  --bg: #f8fafc; /* slate-50 */
+  --text: #0f172a; /* slate-900 */
+  --muted: #64748b; /* slate-500 */
+  --card: #ffffff;
+  --code-bg: #0b1020;
+}
+[data-theme="dark"] {
+  --bg: #0b1020;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --card: #0f172a;
+  --code-bg: #0b1020;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Sticky topbar */
+.topbar {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+}
+.topbar .nav-link,
+.topbar .navbar-brand {
+  color: #fff !important;
+}
+.topbar .nav-link:hover {
+  opacity: 0.9;
+}
+
+/* Layout */
+.page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--card);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+.sidebar .list-group-item {
+  border: 0;
+  border-radius: 0.5rem;
+  color: var(--text);
+}
+.sidebar .list-group-item:hover {
+  background: #eef6ff;
+}
+[data-theme="dark"] .sidebar .list-group-item:hover {
+  background: #0f213a;
+}
+.sidebar .section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 1rem 0 0.5rem;
+}
+
+/* Content */
+.content-card {
+  background: var(--card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Code box */
+pre.code {
+  background: var(--code-bg);
+  color: #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow: auto;
+  position: relative;
+}
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(90deg, var(--brand-2), var(--brand));
+  color: #fff;
+}
+
+/* Utilities */
+.badge-soft {
+  background: rgba(255, 255, 255, 0.25);
+}
+.gradient-text {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Search */
+.search-box {
+  max-width: 520px;
+}
