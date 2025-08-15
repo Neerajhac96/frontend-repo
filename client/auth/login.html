@@ -4,19 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
   <body>
     <h2>Login</h2>
 
-    <form id="loginForm">
-      <input type="email" id="email" placeholder="Email" required /><br /><br />
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        required
-      /><br /><br />
-      <button type="submit">Login</button>
+    <form id="loginForm" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <img src="../images/avatar1.jpg" alt="Avatar" class="avatar" />
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          id="email"
+          placeholder="Enter Username or Email "
+          name="uname"
+          required
+        /><br /><br />
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        /><br /><br />
+        <!-- Login Button -->
+        <button type="submit">Login</button> <br /><br />
+        <label>
+          <input type="checkbox" checked="checked" name="remember" /> Remember
+          me
+        </label>
+        <br /><br />
+        <!-- Links to Signup and Home -->
+        <!-- <a href="signup.html">Don't have an account? Signup</a><br /><br />
+      <a href="../index.html">Back to Home</a><br /><br /> -->
+      </div>
+
+      <div class="container" style="background-color: #f1f1f1">
+        <button type="button" class="cancelbtn"> <a href="../index.html" style="text-decoration: none;">Cancel</a></button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
     </form>
 
     <p id="message"></p>
@@ -32,7 +62,7 @@
         const password = document.getElementById("password").value;
 
         try {
-          const res = await fetch("https://startify-backend.onrender.com/api/auth/login", {
+          const res = await fetch("http://localhost:5000/api/auth/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
