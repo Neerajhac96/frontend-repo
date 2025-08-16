@@ -1,4 +1,4 @@
-const backendURL = "http://localhost:5000/api/dashboard";
+const backendURL = "https://startify-backend.onrender.com/api/dashboard";
 
 async function loadDashboard() {
     const token = localStorage.getItem("token");
@@ -8,7 +8,7 @@ async function loadDashboard() {
     }
 
     try {
-        const res = await fetch("http://localhost:5000/api/dashboard", {
+        const res = await fetch("https://startify-backend.onrender.com/api/dashboard", {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
